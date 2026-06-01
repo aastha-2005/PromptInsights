@@ -1,0 +1,26 @@
+# PromptInsights — Backend Dependencies
+# ----------------------------------------
+# Install with:  pip install -r requirements.txt
+
+# Web framework
+fastapi==0.111.0
+
+# ASGI server
+uvicorn[standard]==0.29.0
+
+# Groq SDK
+groq==0.8.0
+
+# Google GenAI SDK — pinned to v1.7.0 (stable)
+# v2.x internally calls ModelService.ListModels which returns 404
+# on many API tiers, crashing the Gemini fallback at runtime.
+google-genai==1.7.0
+
+# Data analysis (used in main.py for CSV parsing & statistics)
+pandas==2.2.2
+
+# Environment variable loader
+python-dotenv==1.0.1
+
+# Data validation (bundled with FastAPI, pinned for stability)
+pydantic==2.7.1
